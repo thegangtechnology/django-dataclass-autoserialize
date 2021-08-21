@@ -1,19 +1,21 @@
 # django-dataclass-autoserialize
 
 An extension of slightly modified
-oxan's [django-dataclass-serialize](https://github.com/oxan/djangorestframework-dataclasses). Making it much more
+oxan's [django-dataclass-serialize](https://github.com/oxan/djangorestframework-dataclasses) 
+(Temporary hosted [here](https://github.com/piti118/djangorestframework-dataclasses)). 
+Making it much more
 enjoyable to use with [drf-yasg](https://github.com/axnsan12/drf-yasg).
+
+The goal of this package is to make the APIView as succinctly as possible. The main pain point it is trying to solve is
+
+1) Having to define the param class and serialize separately.
+2) Having it nicely integrate with drf-yasg without having to duplicate information.
 
 # Install
 
 pip install django-dataclass-autoserialize
 
 # Documentation
-
-The goal of this pacakge is to make the apiview as succint as possible. The main pain point it is trying solve is
-
-1) Having to define the param class and serialize seperately.
-2) Having it integrate with drf-yasg without having to duplicate information.
 
 ## Simple Usage
 
@@ -95,7 +97,7 @@ class Numbers(AutoSerialize):
     b: int
 
     @classmethod
-    def validate_data(cls, obj: Numbers):
+    def validate_data(cls, obj: Numbers) -> Numbers:
         from rest_framework.exceptions import ValidationError
         if obj.a + obj.b > 1000:
             raise ValidationError('too big')
