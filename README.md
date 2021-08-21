@@ -1,25 +1,26 @@
 # django-dataclass-autoserialize
 
 An extension of slightly modified
-oxan's [django-dataclass-serialize](https://github.com/oxan/djangorestframework-dataclasses) 
-(Temporary hosted [here](https://github.com/piti118/djangorestframework-dataclasses)). 
-Making it much more
-enjoyable to use with [drf-yasg](https://github.com/axnsan12/drf-yasg).
+oxan's [django-dataclass-serialize](https://github.com/oxan/djangorestframework-dataclasses)
+(Temporary hosted [here](https://github.com/piti118/djangorestframework-dataclasses)). Making it much more enjoyable to
+use with [drf-yasg](https://github.com/axnsan12/drf-yasg).
 
-The goal of this package is to make the APIView as succinctly as possible. The main pain point it is trying to solve is
+The goal of this package is to make the APIView code as succinctly as possible. The main pain point it is trying to solve is
 
 1) Having to define the param class and serialize separately.
 2) Having it nicely integrate with drf-yasg without having to duplicate information.
 
 # Install
 
+```
 pip install django-dataclass-autoserialize
+```
 
 # Documentation
 
 ## Simple Usage
 
-Here is an example of a typical usage. Pull straight from 
+Here is an example of a typical usage. Pull straight from
 [Example Project](https://github.com/thegangtechnology/django_dataclass_autoserialize_example)
 
 ```python
@@ -79,6 +80,8 @@ class SubtractView(APIView):
 ```
 
 Then the swagger will shows up like the following
+![swagger example 1](https://github.com/thegangtechnology/django-dataclass-autoserialize/raw/main/images/example1.png)
+![swagger example 2](https://github.com/thegangtechnology/django-dataclass-autoserialize/raw/main/images/example2.png)
 
 ## Customization
 
@@ -95,8 +98,9 @@ class Person:
 
 ## Validation
 
-The validation of the object can be done by overiding 
+The validation of the object can be done by overiding
 `validate_data(cls, obj)` method. For example
+
 ```python
 class Numbers(AutoSerialize):
     a: int
