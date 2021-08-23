@@ -5,7 +5,7 @@ oxan's [django-dataclass-serialize](https://github.com/oxan/djangorestframework-
 Making it much more enjoyable to
 use with [drf-yasg](https://github.com/axnsan12/drf-yasg).
 
-The goal of this package is to make the APIView code as succinctly as possible. The main pain point it is trying to solve is
+The goal of this package is to make the APIView code as succinct as possible. The main pain point it is trying to solve is
 
 1) Having to define the param class and serialize separately.
 2) Having it nicely integrate with drf-yasg without having to duplicate information.
