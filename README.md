@@ -102,6 +102,7 @@ The validation of the object can be done by overiding
 `validate_data(cls, obj)` method. For example
 
 ```python
+@dataclass
 class Numbers(AutoSerialize):
     a: int
     b: int
