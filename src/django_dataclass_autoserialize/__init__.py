@@ -5,7 +5,8 @@ from typing import Type, Generic, TypeVar, Dict, Any, Optional, List
 
 from rest_framework.request import Request
 from rest_framework.response import Response
-from rest_framework_dataclasses.serializers import DataclassSerializer
+from rest_framework_dataclasses.field_utils import TypeInfo
+from rest_framework_dataclasses.serializers import DataclassSerializer, SerializerFieldDefinition
 
 from django_dataclass_autoserialize.__version__ import version
 
@@ -13,6 +14,15 @@ T = TypeVar('T')
 
 
 class TGSerializer(DataclassSerializer[T], Generic[T]):
+
+    def build_dataclass_field(self, field_name: str, type_info: TypeInfo) -> SerializerFieldDefinition:
+        if hasattr(type_info.base_type, 'serializer') and callable(type_info.base_type.serializer):
+            field_class = type_info.base_type.serializer()
+            field_kwargs = {'many': type_info.is_many}
+            return field_class, field_kwargs
+        else:
+            return super().build_dataclass_field(field_name=field_name, type_info=type_info)
+
     def parse_request(cls, request: Request) -> T:
         raise NotImplementedError()
 

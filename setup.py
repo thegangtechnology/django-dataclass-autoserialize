@@ -18,15 +18,16 @@ setup(name=package_name,
       version=get_version(),
       description='',
       long_description=open('README.md').read().strip(),
-      author='',
-      author_email='',
-      url='',
+      long_description_content_type='text/markdown',
+      author='Piti Ongmongkolkul',
+      author_email='o.piti@thegang.tech',
+      url='https://github.com/thegangtechnology/django-dataclass-autoserialize',
       package_dir={'': 'src'},
       packages=find_packages('src'),
       py_modules=[package_name],
       install_requires=[
           # it's currrently need tiny patch to dataclass serializer
-          'djangorestframework-dataclasses @ git+https://github.com/piti118/djangorestframework-dataclasses.git@master#egg=djangorestframework-dataclasses',
+          'djangorestframework-dataclasses',
           'drf-yasg'
       ],
       extras_require={
