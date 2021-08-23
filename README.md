@@ -1,8 +1,8 @@
 # django-dataclass-autoserialize
 
 An extension of slightly modified
-oxan's [django-dataclass-serialize](https://github.com/oxan/djangorestframework-dataclasses)
-(Temporary hosted [here](https://github.com/piti118/djangorestframework-dataclasses)). Making it much more enjoyable to
+oxan's [django-dataclass-serialize](https://github.com/oxan/djangorestframework-dataclasses). 
+Making it much more enjoyable to
 use with [drf-yasg](https://github.com/axnsan12/drf-yasg).
 
 The goal of this package is to make the APIView code as succinctly as possible. The main pain point it is trying to solve is
