@@ -1,4 +1,4 @@
-__all__ = ['version']
+__all__ = ['version', 'AutoSerialize', 'swagger_post_schema', 'swagger_get_schema']
 
 import functools
 from typing import Type, Generic, TypeVar, Dict, Any, Optional, List
